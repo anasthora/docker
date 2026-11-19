@@ -35,8 +35,8 @@ docker images
 docker run --rm test2:1.0 bash -c '  samtools --version | head -n 2 &&   bcftools --version | head -n 2 &&   vcftools --version &&   python -c "import pysam; print(\"pysam version:\", pysam.__version__)" &&   echo «OK» '
 ```
 
-запуск скрипта в контейнере из папки с данными для обработки и скриптом
-(вместо переменной"$(pwd)" можно указать путь к папке с данными и скриптом)
+запуск скрипта в контейнере из папки с данными для обработки и скриптом <br>
+(при запуске контейнера из иной папки вместо переменной"$(pwd)" можно указать путь к папке с данными и скриптом)
 ```bash
 docker run --rm -v "$(pwd)":/data test2:1.0 python3 resolve_ref_alt.py \
 -i FP_SNPs_10k_GB38_twoAllelsFormat.tsv \
